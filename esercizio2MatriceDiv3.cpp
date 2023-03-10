@@ -14,7 +14,7 @@ int main()
                                                  // riempo la matrice con numeri casuali < 10
                                                  // se i numeri sono divisibili per 3 li metto dentro l'array risultato
     {
-        for (int y = 0; y < MATRICE; i++)
+        for (int y = 0; y < MATRICE; y++)
         {
             numRandom = rand() % 10;
             matrice[i][y] = numRandom;
