@@ -15,18 +15,16 @@ int main()
         {
             numRandom = rand() % 10;
             matrice[i][y] = numRandom;
-        }
-    }
-    for (int i = 0; i < MATRICE; i++)
-    {
-        for (int y = 0; y < MATRICE; y++)
-        {
             if (numRandom % 3 == 0)
             {
                 risultato[y] = numRandom;
             }
         }
     }
+    
+            
+        
+    
         cout <<" STAMPA " <<endl;
 
         for (int i = 0; i < MATRICE; i ++){
