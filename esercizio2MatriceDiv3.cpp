@@ -39,7 +39,7 @@ int main()
     }
     for (int i = 0; i < quanti; i++)
     {
-        cout << risultato[i];
+        cout << risultato[i] << " ";
     }
 
     cout << "\nQuesti sono i numeri presenti divisibili per 3\n";

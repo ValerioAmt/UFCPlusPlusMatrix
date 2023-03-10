@@ -11,7 +11,7 @@ int voti[STUDENTI][ESAMI];
 
     for(int i = 0; i < STUDENTI; i++){
         for(int j = 0; j < ESAMI; i++){
-            cout 
+            cin >> voti[i][j];
 
         }
     }
