@@ -8,8 +8,11 @@ int main()
     int matrice[MATRICE][MATRICE];
     int risultato[MATRICE];
     int numRandom = 0;
+    int quanti = 0;
 
-    for (int i = 0; i < MATRICE; i++)
+    for (int i = 0; i < MATRICE; i++)            // da riga 13 a 22
+                                                 // riempo la matrice con numeri casuali < 10
+                                                 // se i numeri sono divisibili per 3 li metto dentro l'array risultato
     {
         for (int y = 0; y < MATRICE; i++)
         {
@@ -18,6 +21,7 @@ int main()
             if (numRandom % 3 == 0)
             {
                 risultato[y] = numRandom;
+                quanti++;
             }
         }
     }
@@ -34,8 +38,8 @@ int main()
             }
         cout << endl;
         }
-        for (int i = 0; i < matrice; i++){
-            cout << matrice;
+        for (int i = 0; i < quanti; i++){
+            cout << risultato[i];
         }
          
          cout << "Questi sono i numeri presenti divisibili per 3\n";
