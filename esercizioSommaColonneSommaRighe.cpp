@@ -42,7 +42,7 @@ int main()
         int sommaColonne = 0;
         for (int j=0; j<righe;  j++)
         {
-        sommaColonne += matriceRandom[j][i];
+        sommaColonne += matriceRandom[j][i];   //inverto gli indici per sommare in "verticale", mi muovo scorrendo prima la colonna e poi cambio riga
         }
         cout << sommaColonne << " ";
     }
