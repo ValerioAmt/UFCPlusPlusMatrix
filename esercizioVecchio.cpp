@@ -20,9 +20,10 @@ int main()
         {
             matrix[i][j] = empty;
         }
+          
     }
  
-    for (int index = 0; index < wordsLength; index++)
+    for (int index = 0; index < wordsLength; index++)   //index = indice che scorre le parole dell'array words
     {
         if (index % 5 == 1)
         { // orizzontale
