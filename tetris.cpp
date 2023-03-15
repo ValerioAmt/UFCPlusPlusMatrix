@@ -7,51 +7,54 @@ using namespace std;
 // -1 per il pareggio
 int isWinner(char *arr)
 {
+    char vuoto = '_';
 
-    int lungArr = sizeof(arr) / sizeof(arr[0]);
-for (int i = 0; i < lungArr; i++){
-    if(arr[i] != '_')
-
-    for (int i = 0; i < lungArr; i++)
+    for (int i = 0; i < 9; i += 3)
     {
-        if (arr[i] != '_' && arr[i] == arr[i + 3] && arr[i] == arr[i + 6]) // controllo verticale
+        if ((arr[i] == arr[i + 1]) && (arr[i + 1] == arr[i + 2]) && (arr[i]!=vuoto) ) // ho tre x vicine
         {
-
-            return 1;
+            return 1; // hai vinto quindi 1
         }
     }
-    for (int i = 0; i < lungArr; i++)
+   for(int i=0; i<3; i++)
     {
-        if (arr[i] != '_' && arr[i] == arr[i++] && arr[i] == arr[i + 2])
+        if ((arr[i] == arr[i + 3]) && (arr[i + 3] == arr[i + 6])&& (arr[i]!=vuoto)) // ho tre x in colonna 
         {
-            return 1;
+            return 1; // hai vinto quindi 1    
         }
     }
-    for (int i = 0; i < lungArr; i++)
+     
+    // se li ho trovati in diagonale hai vinto =1
+    if ((arr[0]==arr[4]&& arr[4]==arr[8])&& (arr[0]!=vuoto))
     {
-        if ((arr[i] != '_' && arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
-        {
-            return 1;
-        }
+        return 1;
     }
-
-    return 0;
+    if((arr[2]==arr[4]&& arr[4]==arr[6])&& (arr[2]!=vuoto))
+    {
+        return 1; 
+    }
+    
+    for (int i =0; i<9; i++)
+    {
+        if (arr[i]==vuoto)
+        {
+            return 0;
+        }
+    } 
+ 
+    return -1; 
 }
-}
 
-void stampa(char *a)
+void stampa(char *tabella)
 {
     for (int i = 0; i < 9; i++)
     {
-        cout << a[i] << " ";
-        if (i == 2 || i == 5 || i == 8)
+        cout << tabella[i] << " ";
+        if (i == 2 || i == 5 || i == 8) // alla fine di ogni riga (3x3) vai a capo
         {
-            std::cout << std::endl;
+            cout << endl;
         }
     }
-    cout << endl;
-    cout << endl;
-    cout << endl;
 }
 
 int main()
