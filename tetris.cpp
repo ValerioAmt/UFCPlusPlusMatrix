@@ -32,95 +32,92 @@ int isWinner(char *arr)
         {
             return -0;
         }
-    }
-    if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
-    {
-        
+
+        if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
+        {
+
             return 1;
         }
         else
         {
             return 0;
         }
-    return -1;
+        return -1;
     }
 
-
-
-
-void stampa(char *a)
-{
-    for (int i = 0; i < 9; i++)
+    void stampa(char *a)
     {
-        cout << a[i] << " ";
-        if (i == 2 || i == 5 || i == 8)
+        for (int i = 0; i < 9; i++)
         {
-            std::cout << std::endl;
+            cout << a[i] << " ";
+            if (i == 2 || i == 5 || i == 8)
+            {
+                std::cout << std::endl;
+            }
         }
+        cout << endl;
+        cout << endl;
+        cout << endl;
     }
-    cout << endl;
-    cout << endl;
-    cout << endl;
-}
 
-int main()
-{
-
-    char vuoto = '_';
-
-    // inizializzo la tabella
-    char tabella[9];
-    for (int i = 0; i < 9; i++)
-    {
-        tabella[i] = vuoto;
-    }
-    stampa(tabella);
-
-    bool xIsNext = true; // gestisce il turno
-    while (true)         // i turni del gioco
+    int main()
     {
 
-        int mossa;
+        char vuoto = '_';
 
-        cout << "Giocatore " << (xIsNext ? 'X' : 'O') << " inserisci la tua mossa (1-9) ";
-        cin >> mossa;
-        mossa--; // per capirci ;)
-
-        while (tabella[mossa] != vuoto || (!(0 <= mossa && mossa < 9))) // controllo 2 condizioni (valido e vuoto)
+        // inizializzo la tabella
+        char tabella[9];
+        for (int i = 0; i < 9; i++)
         {
-            cout << "Non puoi inserire qui" << endl;
-            cout << "Giocatore " << (xIsNext ? 'X' : 'O') << " inserisci la tua mossa (1-9) ";
-            cin >> mossa;
+            tabella[i] = vuoto;
         }
-
-        // se sono arrivato qui è solo perchè l'utente ha inserito un numero corretto
-        xIsNext ? tabella[mossa] = 'X' : tabella[mossa] = 'O'; // se è vero metti X altrimenti metti O
-
         stampa(tabella);
 
-        if (isWinner(tabella) == 1)
+        bool xIsNext = true; // gestisce il turno
+        while (true)         // i turni del gioco
         {
-            cout << "Hai vinto " << (xIsNext ? 'X' : 'O') << endl;
-            break;
-        }
-        else if (isWinner(tabella) == -1)
-        {
-            cout << "Pareggio" << endl;
-            // reset del gioco
-            for (int i = 0; i < 9; i++)
+
+            int mossa;
+
+            cout << "Giocatore " << (xIsNext ? 'X' : 'O') << " inserisci la tua mossa (1-9) ";
+            cin >> mossa;
+            mossa--; // per capirci ;)
+
+            while (tabella[mossa] != vuoto || (!(0 <= mossa && mossa < 9))) // controllo 2 condizioni (valido e vuoto)
             {
-                tabella[i] = vuoto;
+                cout << "Non puoi inserire qui" << endl;
+                cout << "Giocatore " << (xIsNext ? 'X' : 'O') << " inserisci la tua mossa (1-9) ";
+                cin >> mossa;
             }
-            xIsNext = true;
+
+            // se sono arrivato qui è solo perchè l'utente ha inserito un numero corretto
+            xIsNext ? tabella[mossa] = 'X' : tabella[mossa] = 'O'; // se è vero metti X altrimenti metti O
+
             stampa(tabella);
-        }
-        else if (isWinner(tabella) == 0)
-        {
-            xIsNext = !xIsNext; // cambio giocatore
-        }
-        else
-        {
-            cout << "Errore nella funzione isWinner" << endl;
+
+            if (isWinner(tabella) == 1)
+            {
+                cout << "Hai vinto " << (xIsNext ? 'X' : 'O') << endl;
+                break;
+            }
+            else if (isWinner(tabella) == -1)
+            {
+                cout << "Pareggio" << endl;
+                // reset del gioco
+                for (int i = 0; i < 9; i++)
+                {
+                    tabella[i] = vuoto;
+                }
+                xIsNext = true;
+                stampa(tabella);
+            }
+            else if (isWinner(tabella) == 0)
+            {
+                xIsNext = !xIsNext; // cambio giocatore
+            }
+            else
+            {
+                cout << "Errore nella funzione isWinner" << endl;
+            }
         }
     }
-}
