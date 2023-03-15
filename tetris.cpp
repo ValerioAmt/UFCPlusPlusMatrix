@@ -7,31 +7,45 @@ using namespace std;
 // -1 per il pareggio
 int isWinner(char *arr)
 {
+
     int lungArr = sizeof(arr) / sizeof(arr[0]);
     for (int i = 0; i < lungArr; i++)
     {
         if (arr[i] != '_')
         {
-            if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6])
+            if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6]) // controllo verticale
             {
-                return 1;
+                if (i == 'x')
+                {
+                    return 1;
+                }
             }
-            else if (arr[i] == arr[i++] && arr[i] == arr[i + 2])
+            else
             {
-                return 1;
+                return -1;
             }
-            else if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 4]) && (arr[2] == arr[+2] && arr[2] == arr[6]))
+            if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
             {
-                return 1;
+                if (i == 'o')
+                {
+                    return 1;
+                }
             }
-        }
-        else
-        {
-            return 0;
+            if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 4]) && (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
+            {
+                if (i = 'x')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
         }
     }
+    return 0;
 }
-
 void stampa(char *a)
 {
     for (int i = 0; i < 9; i++)
