@@ -12,14 +12,19 @@ int isWinner(char *arr)
     {
         if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6])
         {
-            return 0;
+            return 1;
         }
         else if (arr[i] == arr[i++] && arr[i] == arr[i + 2])
         {
-            return 0;
+            return 1;
         }
-    }else
+            else if ((arr[i] == 0 && arr[i] == arr[i+4] && arr[i] == arr[i+4]) && ((arr[2] == arr[+2] && arr[2] ==arr[6]) ))
+         {
+            return 1;
+         }
+    } 
     
+
 }
 
 void stampa(char *a)
