@@ -9,38 +9,33 @@ int isWinner(char *arr)
 {
 
     int lungArr = sizeof(arr) / sizeof(arr[0]);
+
     for (int i = 0; i < lungArr; i++)
     {
-        if (arr[i] != '_')
+        if (arr[i] != '_' && arr[i] == arr[i + 3] && arr[i] == arr[i + 6]) // controllo verticale
         {
-            for (int j = arr[i]; j < lungArr; j++)
-            {
-                if (arr[j] == arr[j + 3] && arr[j] == arr[j + 6]) // controllo verticale
-                {
 
-                    return 1;
-                    j=0;
-                }
-                
-                else if (arr[j] == arr[j++] && arr[j] == arr[j + 2])
-                {
-                    return 1;
-                    j=0;
-                }
-              
-                else if ((arr[j] == arr[j + 4] && arr[i] == arr[j + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
-                {
-                    return 1;
-                    j = 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
+            return 1;
         }
     }
+    for (int i = 0; i < lungArr; i++)
+    {
+        if (arr[i] != '_' && arr[i] == arr[i++] && arr[i] == arr[i + 2])
+        {
+            return 1;
+        }
+    }
+    for (int i = 0; i < lungArr; i++)
+    {
+        if ((arr[i] != '_' && arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
+        {
+            return 1;
+        }
+    }
+
+    return 0;
 }
+
 void stampa(char *a)
 {
     for (int i = 0; i < 9; i++)
