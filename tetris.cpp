@@ -18,33 +18,34 @@ int isWinner(char *arr)
 
                 return 1;
             }
-        }
-        else
-        {
-            return 0;
-        }
-        if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
-        {
 
-            return 1;
-        }
-        else
-        {
-            return -0;
-        }
+            else
+            {
+                return 0;
+            }
+            if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
+            {
 
-        if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
-        {
+                return 1;
+            }
+            else
+            {
+                return -0;
+            }
 
-            return 1;
+            if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
+            {
+
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
-        else
-        {
-            return 0;
-        }
-        return -1;
     }
-
+}  
     void stampa(char *a)
     {
         for (int i = 0; i < 9; i++)
