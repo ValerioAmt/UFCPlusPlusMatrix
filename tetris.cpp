@@ -25,11 +25,11 @@ int isWinner(char *arr)
                 return 1;
             }
         }
-      else {
-        return 0;
-      }    
+        else
+        {
+            return 0;
+        }
     }
-
 }
 
 void stampa(char *a)
