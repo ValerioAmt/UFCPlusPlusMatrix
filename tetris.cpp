@@ -26,7 +26,7 @@ int isWinner(char *arr)
             }
             if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
             {
-                if (i == 'o')
+                if (i == 'x')
                 {
                     return 1;
                 }
