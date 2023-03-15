@@ -12,8 +12,10 @@ int isWinner(char *arr)
     for (int i = 0; i < lungArr; i++)
     {
         if (arr[i] != '_')
-        {
-            if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6]) // controllo verticale
+        {   
+          for(int j = 0;j < lungArr; j++)
+           { 
+            if (arr[i] == arr[j + 3] && arr[i] == arr[j + 6]) // controllo verticale
             {
 
                 return 1;
@@ -23,7 +25,7 @@ int isWinner(char *arr)
             {
                 return 0;
             }
-            if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
+            if (arr[i] == arr[j++] && arr[i] == arr[j + 2]) // controllo orizzontale
             {
 
                 return 1;
@@ -33,7 +35,7 @@ int isWinner(char *arr)
                 return 0;
             }
 
-            if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
+            if ((arr[i] == arr[j + 4] && arr[i] == arr[j + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
             {
 
                 return 1;
@@ -42,7 +44,7 @@ int isWinner(char *arr)
             {
                 return 0;
             }
-           
+           }
         
             
         }
