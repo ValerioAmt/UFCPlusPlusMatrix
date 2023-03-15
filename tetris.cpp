@@ -2,18 +2,23 @@
 
 using namespace std;
 
-
 // 1 per la vittoria
 // 0 per continuare la partita
 // -1 per il pareggio
 int isWinner(char *arr)
-{   
-    int lungArr = sizeof(arr)/sizeof(arr[0]);
+{
+    int lungArr = sizeof(arr) / sizeof(arr[0]);
     for (int i = 0; i < lungArr; i++)
     {
-        if(arr[i] == arr[i+3] && arr[i] == arr[i+6])
-          return 0;   
-    }
+        if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6])
+        {
+            return 0;
+        }
+        else if (arr[i] == arr[i++] && arr[i] == arr[i + 2])
+        {
+            return 0;
+        }
+    }else
     
 }
 
@@ -45,15 +50,15 @@ int main()
     }
     stampa(tabella);
 
-    bool xIsNext = true; //gestisce il turno
-    while (true) // i turni del gioco
+    bool xIsNext = true; // gestisce il turno
+    while (true)         // i turni del gioco
     {
 
         int mossa;
 
         cout << "Giocatore " << (xIsNext ? 'X' : 'O') << " inserisci la tua mossa (1-9) ";
         cin >> mossa;
-        mossa--; //per capirci ;)
+        mossa--; // per capirci ;)
 
         while (tabella[mossa] != vuoto || (!(0 <= mossa && mossa < 9))) // controllo 2 condizioni (valido e vuoto)
         {
@@ -67,29 +72,28 @@ int main()
 
         stampa(tabella);
 
-
-        if(isWinner(tabella) == 1)
+        if (isWinner(tabella) == 1)
         {
             cout << "Hai vinto " << (xIsNext ? 'X' : 'O') << endl;
             break;
         }
-        else if(isWinner(tabella) == -1)
+        else if (isWinner(tabella) == -1)
         {
             cout << "Pareggio" << endl;
-            //reset del gioco
-            for(int i=0;i<9;i++)
+            // reset del gioco
+            for (int i = 0; i < 9; i++)
             {
                 tabella[i] = vuoto;
             }
             xIsNext = true;
             stampa(tabella);
-
         }
-        else if(isWinner(tabella) == 0)
+        else if (isWinner(tabella) == 0)
         {
             xIsNext = !xIsNext; // cambio giocatore
         }
-        else{
+        else
+        {
             cout << "Errore nella funzione isWinner" << endl;
         }
     }
