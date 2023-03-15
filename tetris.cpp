@@ -30,7 +30,7 @@ int isWinner(char *arr)
             }
             else
             {
-                return -0;
+                return 0;
             }
 
             if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
@@ -42,6 +42,8 @@ int isWinner(char *arr)
             {
                 return 0;
             }
+           
+        
             
         }
     }
