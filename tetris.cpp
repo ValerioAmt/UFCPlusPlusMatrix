@@ -15,18 +15,18 @@ int isWinner(char *arr)
         {
             if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6]) // controllo verticale
             {
-                if (i == 'x')
+                if (arr[i] == 'x')
                 {
                     return 1;
                 }
             }
-            else
+             
             {
                 return -1;
             }
             if (arr[i] == arr[i++] && arr[i] == arr[i + 2]) // controllo orizzontale
             {
-                if (i == 'x')
+                if (arr[i] == 'x')
                 {
                     return 1;
                 }
@@ -37,7 +37,7 @@ int isWinner(char *arr)
             }
             if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 8]) || (arr[2] == arr[+2] && arr[2] == arr[6])) // controllo diagonale
             {
-                if (i = 'x')
+                if (arr[i] = 'x')
                 {
                     return 1;
                 }
