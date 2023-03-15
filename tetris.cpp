@@ -9,6 +9,8 @@ int isWinner(char *arr)
 {
 
     int lungArr = sizeof(arr) / sizeof(arr[0]);
+for (int i = 0; i < lungArr; i++){
+    if(arr[i] != '_')
 
     for (int i = 0; i < lungArr; i++)
     {
@@ -34,6 +36,7 @@ int isWinner(char *arr)
     }
 
     return 0;
+}
 }
 
 void stampa(char *a)
