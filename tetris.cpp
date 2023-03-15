@@ -10,20 +10,25 @@ int isWinner(char *arr)
     int lungArr = sizeof(arr) / sizeof(arr[0]);
     for (int i = 0; i < lungArr; i++)
     {
-        if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6])
+        if (arr[i] != '_')
         {
-            return 1;
+            if (arr[i] == arr[i + 3] && arr[i] == arr[i + 6])
+            {
+                return 1;
+            }
+            else if (arr[i] == arr[i++] && arr[i] == arr[i + 2])
+            {
+                return 1;
+            }
+            else if ((arr[i] == arr[i + 4] && arr[i] == arr[i + 4]) && (arr[2] == arr[+2] && arr[2] == arr[6]))
+            {
+                return 1;
+            }
         }
-        else if (arr[i] == arr[i++] && arr[i] == arr[i + 2])
-        {
-            return 1;
-        }
-            else if ((arr[i] == 0 && arr[i] == arr[i+4] && arr[i] == arr[i+4]) && ((arr[2] == arr[+2] && arr[2] ==arr[6]) ))
-         {
-            return 1;
-         }
-    } 
-    
+      else {
+        return 0;
+      }    
+    }
 
 }
 
