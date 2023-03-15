@@ -20,7 +20,7 @@ int isWinner(char *arr)
                     return 1;
                 }
             }
-             
+             else
             {
                 return -1;
             }
