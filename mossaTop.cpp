@@ -55,8 +55,8 @@ int main()
         {0, 4, 8},
         {2, 4, 6}};
 
-    for (int i = 0; i < 8; i++)
-    {
+    for (int i = 0; i < 8; i++)    //   _xx    1 caso
+    { 
 
         char a = tab[combinazioni[i][0]];
         char b = tab[combinazioni[i][1]];
@@ -70,7 +70,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 8; i++)  // _xx    2 caso 
     {
         char a = tab[combinazioni[i][0]];
         char b = tab[combinazioni[i][1]];
@@ -83,7 +83,7 @@ int main()
             risultato = combinazioni[i][0];
         }
     }
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 8; i++)    //x _ x    3 caso 
     {
         char a = tab[combinazioni[i][0]];
         char b = tab[combinazioni[i][1]];
