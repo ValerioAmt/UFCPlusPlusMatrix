@@ -89,16 +89,9 @@ int main()
         char b = tab[combinazioni[i][1]];
         char c = tab[combinazioni[i][2]];
 
-        bool condizione = a == c && b == vuoto && a == 'x';
+        bool condizione = a == c && b == vuoto && a == 'X';
     }
 
-    for (int i = 0; i < 8; i++)
-    {
-        char a = tab[combinazioni[i][0]];
-        char b = tab[combinazioni[i][2]];
-        char c = tab[combinazioni[i][3]];
-
-        bool condizione = 
-    }
+   
     cout << "risultato ottenuto: " << risultato << " | risultato atteso: 1" << endl;
 }
