@@ -90,8 +90,10 @@ int main()
         char c = tab[combinazioni[i][2]];
 
         bool condizione = a == c && b == vuoto && a == 'X';
-    }
+        if (condizione)
+        {
+            risultato = combinazioni[i][1];
+        }
 
-   
-    cout << "risultato ottenuto: " << risultato << " | risultato atteso: 1" << endl;
-}
+        cout << "risultato ottenuto: " << risultato << " | risultato atteso: 1" << endl;
+    }
