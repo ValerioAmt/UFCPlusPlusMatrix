@@ -13,18 +13,18 @@ int isWinner(char *arr)
     {
         if ((arr[i] == arr[i + 1]) && (arr[i + 1] == arr[i + 2]) && (arr[i]!=vuoto) ) // ho tre x vicine
         {
-            return 1; // hai vinto quindi 1
+            return 1; // vittoria orizzontale
         }
     }
    for(int i=0; i<3; i++)
     {
         if ((arr[i] == arr[i + 3]) && (arr[i + 3] == arr[i + 6])&& (arr[i]!=vuoto)) // ho tre x in colonna 
         {
-            return 1; // hai vinto quindi 1    
+            return 1; // vittoria verticale    
         }
     }
      
-    // se li ho trovati in diagonale hai vinto =1
+    // vittoria diagonale
     if ((arr[0]==arr[4]&& arr[4]==arr[8])&& (arr[0]!=vuoto))
     {
         return 1;
